@@ -30,6 +30,7 @@ add_executable(
 
     src/main.c
     src/server/cgi.c
+    src/server/ssi.c
     src/helpers/helpers.c
 )
 
