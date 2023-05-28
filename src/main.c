@@ -6,7 +6,7 @@
 // ssi
 #include "cgi.h"
 #include "helpers.h"
-#include "wifi_credentials.h"
+#include "wifi_config/wifi_credentials.h"
 
 
 #define WIFI_CONN_TIMEOUT_S 10
@@ -36,8 +36,11 @@ void main(void)
                                                    WIFI_PASS, 
                                                    CYW43_AUTH_WPA2_AES_PSK, 
                                                    WIFI_CONN_TIMEOUT_S * 1000);
-        if (error) {
-            // TODO
+        if (error == PICO_ERROR_TIMEOUT) {
+            printf("Connecting to %s...\n", WIFI_SSID);
+        } else {
+            printf("Error connecting to the %s network. Error code: %s\n", WIFI_SSID, errCodeToStr(error));
+            sleep_ms(ERROR_SLEEP_MS);
         }
     } while (error);
     
