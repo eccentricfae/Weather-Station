@@ -12,27 +12,25 @@ else()
     include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 endif()
 
-project(IOT-WEATHER-STATION C CXX)
+project(WEATHER-STATION C CXX)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
 pico_sdk_init()
 
+# Generates html_data.c (raw html for uC)
 execute_process(COMMAND
     python ${CMAKE_CURRENT_LIST_DIR}/src/helpers/makefsdata.py
     WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
 )
-# TEST
-# message(FATAL_ERROR "Check html_data.c?")
 
 add_executable(
     ${PROJECT_NAME}
 
     src/main.c
-    # src/server/ssi.c
     src/server/cgi.c
-    # src/helpers/helpers.c
+    src/helpers/helpers.c
 )
 
 target_include_directories(
@@ -41,8 +39,8 @@ target_include_directories(
     PUBLIC   
     src/
     src/server/
-    src/secret/
     src/helpers/
+    src/wifi_config/
 )
 
 target_link_libraries(
@@ -50,7 +48,7 @@ target_link_libraries(
 
     PUBLIC
     pico_stdlib 
-    pico_cyw43_arch_lwip_threadsafe_background # Pico W libs for working w/ networking
+    pico_cyw43_arch_lwip_threadsafe_background
     pico_lwip_http                             
 )
 

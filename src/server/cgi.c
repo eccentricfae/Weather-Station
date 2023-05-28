@@ -1,21 +1,19 @@
 #include "cgi.h"
 
-// CGI handler which is run when a request for /led.cgi is detected
-const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
+const char * home_handler(int index, 
+                          int num_params, 
+                          char * params[], 
+                          char * values[])
 {
-    static int x = 0;
-    cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, x);
-    x = !x;
-
     return "/index.shtml";
 }
 
-static const tCGI cgi_handlers[] = {
-    {
-        // Html request for "/led.cgi" triggers cgi_handler
-        "/led", cgi_led_handler
-    }
+
+tCGI const cgi_handlers[] = {
+    { "/home", home_handler } // index 0;  <ip-addr>/home; also works <ip-addr> (nothing)
+    // IDEA Create debug page?
 };
+
 
 void cgiInit(void)
 {

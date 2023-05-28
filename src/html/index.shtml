@@ -4,8 +4,50 @@
     <meta charset='utf-8'>
     <title>Weather Station</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/colorful-landscape-with-red-white-flowers_23-2147489889.jpg?w=2000');
+            background-size: 100vw 100vh;
+        }
+        #main_title {
+            width: 100vw;
+            overflow-wrap: break-word;
+            color: white;
+            text-shadow: 5px 5px 10px black;
+        }
+        .row {
+            height: 20vh;
+            margin-top: 5vh;
+            display: flex;
+            flex-direction: row;
+        }
+        .row > img {
+            height: 100%;
+            margin-top: 5vh;
+            margin-right: 8vw;
+        }
+        .row > p {
+            margin-top: 9vh;
+            font-size: 60px;
+            color: white;
+            text-shadow: 5px 5px 10px black;
+        }
+        .cntr {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <p>Hi</p>
+    <h1 id="main_title" class="cntr">Simple Weather Station</h1>
+    <div class="row cntr">
+        <img style="padding-left: 20px;" src="https://cdn-icons-png.flaticon.com/512/578/578113.png" alt="Thermometer Icon">
+        <p>23.13</p> <!-- TODO add SSI-->
+    </div>
+    <div class="row cntr">
+        <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Humidity Icon">
+        <p style="padding-left: 20px; padding-top: 2vh;">69.69</p> <!-- TODO add SSI-->
+    </div>
+    <!-- <a class="cntr" href="./home" style="height: 20vh; margin-top: 7vh;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Refresh_icon.svg/1200px-Refresh_icon.svg.png"></a> -->
 </body>
 </html>
