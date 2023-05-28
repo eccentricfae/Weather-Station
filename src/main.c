@@ -5,6 +5,7 @@
 
 // ssi
 #include "cgi.h"
+#include "helpers.h"
 #include "wifi_credentials.h"
 
 
@@ -20,10 +21,14 @@ void main(void)
 
     stdio_init_all();
 
-    error = cyw43_arch_init();
-    if (error) {
-        // TODO
-    }
+    do {
+        error = cyw43_arch_init();
+        if (error) {
+            printf("Error initializing the wifi chip. Error code: %s\n", errCodeToStr(error));
+            sleep_ms(ERROR_SLEEP_MS);
+        }
+    } while (error);
+
     cyw43_arch_enable_sta_mode();
 
     do {

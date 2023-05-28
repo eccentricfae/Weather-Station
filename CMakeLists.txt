@@ -30,6 +30,7 @@ add_executable(
 
     src/main.c
     src/server/cgi.c
+    src/helpers/helpers.c
 )
 
 target_include_directories(
