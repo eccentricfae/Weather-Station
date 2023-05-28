@@ -8,6 +8,9 @@
 #include "wifi_credentials.h"
 
 
+#define WIFI_CONN_TIMEOUT_S 10
+#define ERROR_SLEEP_MS 2000
+
 typedef enum pico_error_codes pico_error_codes_t;
 
 
@@ -17,16 +20,32 @@ void main(void)
 
     stdio_init_all();
 
-    // TODO rewrite w/ error checking
-    cyw43_arch_init();
-    cyw43_arch_enable_sta_mode();
-    while(cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASS, CYW43_AUTH_WPA2_AES_PSK, 30 * 1000) != 0){
-        printf("Attempting to connect...\n");
+    error = cyw43_arch_init();
+    if (error) {
+        // TODO
     }
+    cyw43_arch_enable_sta_mode();
+
+    do {
+        error = cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, 
+                                                   WIFI_PASS, 
+                                                   CYW43_AUTH_WPA2_AES_PSK, 
+                                                   WIFI_CONN_TIMEOUT_S * 1000);
+        if (error) {
+            // TODO
+        }
+    } while (error);
+    
+    printf("Initializing http server\n");
     httpd_init();
+
+    printf("Initializing CGI functionality\n");
     cgiInit();
 
+    // printf("Initializing SSI functionality\n");
     // ssi_init(); 
+
+    printf("Initialization completed. Going into the main loop\n");
 
 
     while (true) {
