@@ -5,15 +5,24 @@
     <title>Weather Station</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
-        body {
-            background-image: url('https://img.freepik.com/free-vector/colorful-landscape-with-red-white-flowers_23-2147489889.jpg?w=2000');
-            background-size: 100vw 100vh;
+        
+        @media (min-width: 200px) {
+            body {
+                background-image: url('https://thypix.com/wp-content/uploads/2022/01/mountain-phone-wallpaper-thypix-6-394x700.jpg');
+                background-size: 100vw 100vh;
+            }
+        }
+        @media (min-width: 1000px) {
+            body {
+                background-image: url('https://i.pinimg.com/originals/83/dc/97/83dc972e1d6e92260de8ccc8c5c715a5.jpg');
+                background-size: 100vw 100vh;
+            }
         }
         #main_title {
             width: 100vw;
             overflow-wrap: break-word;
             color: white;
-            text-shadow: 5px 5px 10px black;
+            text-shadow: 5px 5px 7px black;
         }
         .row {
             height: 20vh;
@@ -23,14 +32,13 @@
         }
         .row > img {
             height: 100%;
-            margin-top: 5vh;
             margin-right: 8vw;
+            margin-top: 4vh;
         }
         .row > p {
-            margin-top: 9vh;
             font-size: 60px;
             color: white;
-            text-shadow: 5px 5px 10px black;
+            text-shadow: 5px 5px 7px black;
         }
         .cntr {
             display: flex;
@@ -46,8 +54,7 @@
     </div>
     <div class="row cntr">
         <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Humidity Icon">
-        <p style="padding-left: 20px; padding-top: 2vh;"><!--#humid--></p>
+        <p style="padding-left: 20px;"><!--#humid--></p>
     </div>
-    <!-- <a class="cntr" href="./home" style="height: 20vh; margin-top: 7vh;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Refresh_icon.svg/1200px-Refresh_icon.svg.png"></a> -->
 </body>
 </html>
