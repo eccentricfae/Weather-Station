@@ -3,8 +3,9 @@
 #include <lwip/apps/httpd.h>
 #include "lwipopts.h"
 
-// ssi
 #include "cgi.h"
+#include "ssi.h"
+#include "hardware.h"
 #include "helpers.h"
 #include "wifi_config/wifi_credentials.h"
 

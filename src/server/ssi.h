@@ -5,6 +5,8 @@
 #include <pico/cyw43_arch.h>
 #include <lwip/apps/httpd.h>
 
+#include "hardware.h"
+
 void ssiInit(void);
 
 #endif
