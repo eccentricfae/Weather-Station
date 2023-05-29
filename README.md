@@ -17,7 +17,10 @@ code, but it's important to remember that everything regarding any given webpage
 needs to be embedded into that webpage (html file). That is because the html files
 need to be "transpiled" from human-readable text into C's strings, i.e. char arrays,
 put into a speical .c source file and included into a project so that the web page's
-raw data can be put onto the uC storage.<br>
+raw data can be put onto the uC storage. The "makefsdata.py" is the python script 
+that transpiles the .html files from the html directory into the html_data.c file (the 
+file is supposed to be ignored by .gitignore but was included for demonstration 
+purposes).<br>
 The HTTPd daemon uses CGI (Common Gate Interface) to process user's requests. In this 
 project the CGI is used to display either the default-home page when accessing the 
 server with either no tag (just pure address of the uC) or with the "/home" tag. The 

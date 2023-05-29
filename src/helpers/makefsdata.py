@@ -2,7 +2,10 @@
 
 # This script is by @rspeir on GitHub: 
 # https://github.com/krzmaz/pico-w-webserver-example/pull/1/files/4b3e78351dd236f213da9bebbb20df690d470476#diff-e675c4a367e382db6f9ba61833a58c62029d8c71c3156a9f238b612b69de279d
+
+# Changes to the script by @faeisanxious
 # Renamed output to avoid linking incorrect file
+# Added chdir() directive - line 18
 
 import os
 import binascii
