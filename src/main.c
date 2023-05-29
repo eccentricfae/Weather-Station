@@ -3,8 +3,9 @@
 #include <lwip/apps/httpd.h>
 #include "lwipopts.h"
 
-// ssi
 #include "cgi.h"
+#include "ssi.h"
+#include "hardware.h"
 #include "helpers.h"
 #include "wifi_config/wifi_credentials.h"
 
@@ -50,8 +51,8 @@ void main(void)
     printf("Initializing CGI functionality\n");
     cgiInit();
 
-    // printf("Initializing SSI functionality\n");
-    // ssi_init(); 
+    printf("Initializing SSI functionality\n");
+    ssiInit();
 
     printf("Initialization completed. Going into the main loop\n");
 

@@ -30,6 +30,8 @@ add_executable(
 
     src/main.c
     src/server/cgi.c
+    src/server/ssi.c
+    src/hardware/hardware.c
     src/helpers/helpers.c
 )
 
@@ -39,6 +41,7 @@ target_include_directories(
     PUBLIC   
     src/
     src/server/
+    src/hardware/
     src/helpers/
     src/wifi_config/
 )

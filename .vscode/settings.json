@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "lwipopts.h": "c"
-    }
+        "lwipopts.h": "c",
+        "ssi.h": "c",
+        "cyw43_arch.h": "c",
+        "httpd.h": "c",
+        "hardware.h": "c"
+    },
+    "cmake.configureOnOpen": false
 }
