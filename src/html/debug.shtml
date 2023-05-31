@@ -10,8 +10,12 @@
 </head>
 <body>
     <h1>Page under construction!</h1>
+    <h1>Here's some data regarding the device</h1>
     <p>Uptime: <!--#uptime--></p>
-    <p>wifi name?</p>
-    <p>ip addr?</p>
+    <p>Wifi name: <!--#wfnm--></p>
+    <p>Signal strength: <!--#sigstr-->, this is raw data int32_t for now</p>
+    <!-- Maybe Ip address? -->
+    <p>Current temperature: <!--#temp--></p>
+    <p>Current humid / pressure?: <!--#humid--></p>
 </body>
 </html>

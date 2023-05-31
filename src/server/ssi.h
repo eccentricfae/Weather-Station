@@ -7,6 +7,7 @@
 
 #include "hardware.h"
 #include "helpers.h"
+#include "wifi_credentials.h"
 
 void ssiInit(void);
 
