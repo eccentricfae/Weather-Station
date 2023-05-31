@@ -5,8 +5,10 @@ char const * ssi_tags[] = {
                             /* index 0 */ "temp", 
                             /* index 1 */ "humid",
                             /* index 2 */ "uptime",
-                            /* index 3 */ "wfnm",   // Wifi Name
-                            /* index 4 */ "sigstr", // Signal Strength
+                            /* index 3 */ "wfnm",    // Wifi Name
+                            /* index 4 */ "sigstr",  // Signal Strength
+                            /* index 5 */ "batvolt", // Voltage across the battery
+                            
                           };
 
 
@@ -25,7 +27,7 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
 
         case 2: // #uptime
             uptime_t val = getUptime();
-            printed = (u16_t)snprintf(insert, insert_len, "%2dd-%2dh-%2dm-%2ds", val.days, val.hours, val.minutes, val.seconds);
+            printed = (u16_t)snprintf(insert, insert_len, "%dd-%dh-%2dm-%2ds", val.days, val.hours, val.minutes, val.seconds);
             break;
 
         case 3: // #wfnm
@@ -39,6 +41,10 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
             } else {
                 printed = (u16_t)snprintf(insert, insert_len, "%s", rssiToStr(rssi));
             }
+            break;
+
+        case 5: // #batvolt
+            printed = (u16_t)snprintf(insert, insert_len, "%.2f", readBatteryVoltage());
             break;
 
         default:

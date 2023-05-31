@@ -53,6 +53,7 @@ target_link_libraries(
     pico_stdlib 
     pico_cyw43_arch_lwip_threadsafe_background
     pico_lwip_http   
+    hardware_adc
     -lm                          
 )
 
