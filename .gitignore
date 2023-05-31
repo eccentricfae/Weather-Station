@@ -2,3 +2,4 @@ build/
 bin/
 src/wifi_config/wifi_credentials.h
 src/helpers/html_data.c
+doc/Schematics/
