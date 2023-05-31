@@ -54,6 +54,8 @@ void main(void)
     printf("Initializing SSI functionality\n");
     ssiInit();
 
+    // initHardware();
+
     printf("Initialization completed. Going into the main loop\n");
 
 

@@ -3,7 +3,9 @@
 # TODO / IDEAS
 - mDNS?
 - debug page?
+- page w/ detailed info? like avg temp or highest / lowest? 
 - LEDs?
+- verifying that it is connected
 
 # TLDR
 This project is a simple internet-enabled Weather Station, built using Raspberry Pi Pico W microcontroller. The uC opens up an HTTP server, on port 80, to serve / display a simple web page with data from the sensors: temperature and humidity.
