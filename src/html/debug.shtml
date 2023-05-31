@@ -9,8 +9,8 @@
     </style>
 </head>
 <body>
-    <h1>Page under construction</h1>
-    <p>Uptime?</p>
+    <h1>Page under construction!</h1>
+    <p>Uptime: <!--#uptime--></p>
     <p>wifi name?</p>
     <p>ip addr?</p>
 </body>

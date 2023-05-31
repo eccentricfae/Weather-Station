@@ -6,6 +6,7 @@
 #include <lwip/apps/httpd.h>
 
 #include "hardware.h"
+#include "helpers.h"
 
 void ssiInit(void);
 

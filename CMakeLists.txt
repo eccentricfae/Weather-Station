@@ -52,7 +52,8 @@ target_link_libraries(
     PUBLIC
     pico_stdlib 
     pico_cyw43_arch_lwip_threadsafe_background
-    pico_lwip_http                             
+    pico_lwip_http   
+    -lm                          
 )
 
 # Enable USB output for trivial USB-PC debugging
