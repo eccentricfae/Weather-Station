@@ -56,3 +56,16 @@ uptime_t getUptime()
 
     return retval;
 }
+
+char const * rssiToStr(int32_t rssi)
+{
+    if (rssi > -65) {
+        return "Excellent";
+    } else if (rssi <= -65 && rssi > -75) {
+        return "Good";
+    } else if (rssi <= -75 && rssi > -85) {
+        return "Fair";
+    } else {
+        return "Poor";
+    }
+}

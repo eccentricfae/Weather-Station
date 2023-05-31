@@ -12,7 +12,6 @@ char const * ssi_tags[] = {
 
 u16_t ssi_handlers(int index, char * insert, int insert_len)
 {
-    // TODO What is the max allowed length of inserted string?
     u16_t printed = 0;
 
     switch (index) {
@@ -35,10 +34,11 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
 
         case 4: // #sigstr
             int32_t rssi = 0;
-            int retval = cyw43_wifi_get_rssi(&cyw43_state, &rssi);
-            if (retval != 0) rssi = 0;
-            // TODO Set some kind of way of telling if signal is strong / weak?
-            printed = (u16_t)snprintf(insert, insert_len, "%d", rssi);
+            if (cyw43_wifi_get_rssi(&cyw43_state, &rssi) != 0) {
+                printed = (u16_t)snprintf(insert, insert_len, "%s", "error");
+            } else {
+                printed = (u16_t)snprintf(insert, insert_len, "%s", rssiToStr(rssi));
+            }
             break;
 
         default:

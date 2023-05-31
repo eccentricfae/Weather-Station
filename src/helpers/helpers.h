@@ -28,4 +28,9 @@ uint32_t getMsSinceBoot();
 
 uptime_t getUptime();
 
+/**
+ * @brief Given RSSI value returns text description of the signal's strength
+ */
+char const * rssiToStr(int32_t rssi);
+
 #endif
