@@ -39,7 +39,7 @@ void main(void)
                                                    WIFI_CONN_TIMEOUT_S * 1000);
         if (error == PICO_ERROR_TIMEOUT) {
             printf("Connecting to %s...\n", WIFI_SSID);
-        } else {
+        } else if (error != PICO_OK) {
             printf("Error connecting to the %s network. Error code: %s\n", WIFI_SSID, errCodeToStr(error));
             sleep_ms(ERROR_SLEEP_MS);
         }
@@ -54,12 +54,15 @@ void main(void)
     printf("Initializing SSI functionality\n");
     ssiInit();
 
-    // initHardware();
+    printf("Initializing the hardware module\n");
+    hardwareInit();
 
     printf("Initialization completed. Going into the main loop\n");
 
 
     while (true) {
         //
+        // TODO network connection OK?
+        // TODO regular intervals -> read temp and store it for the debug page (addRecToBuffer())
     }
 }

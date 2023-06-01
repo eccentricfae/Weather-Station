@@ -5,13 +5,44 @@
     <title>Weather Station - DEBUG PAGE</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
-        /*  */
+        .row {
+            height: 20vh;
+            margin-top: 5vh;
+            display: flex;
+            flex-direction: row;
+        }
+        .cntr {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Page under construction</h1>
-    <p>Uptime?</p>
-    <p>wifi name?</p>
-    <p>ip addr?</p>
+    <h1>Here's some data regarding the device</h1>
+    <hr>
+    <h3>Physical</h3>
+    <p>Uptime: <!--#uptime--></p>
+    <p>Voltagte across battery: <!--#batvolt--> V</p>    
+    <hr>
+    <p></p>
+    <hr>
+    <h3>Signal</h3>
+    <p>Wifi name: <!--#wfnm--></p>
+    <p>Signal strength: <!--#sigstr--></p>
+    <!-- Maybe Ip address? -->
+    <hr>
+    <p></p>
+    <hr>
+    <h3>Sensors</h3>
+    <p>Current temperature: <!--#temp--> C</p>
+    <p>Temperature on the Pico: <!--#picotmp--> V</p>
+    <hr>
+    <div class="cntr">
+    <div style="margin-top: 100px; backdrop-filter: blur(4px); height: 70px; width: 200px;" class="row cntr">
+        <a href="./index.shtml"><img style="height: 50px;" src="https://cdn.pixabay.com/photo/2014/04/03/00/38/house-308936_1280.png" alt="Home Page Icon"></a>
+        <a href="./detailed.shtml"><img style="height: 50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1200px-Infobox_info_icon.svg.png" alt="Debug Page Icon"></a>
+        <a href="./debug.shtml"><img style="height: 50px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Refresh_icon.svg/1024px-Refresh_icon.svg.png" alt="Refresh Icon"></a>
+    </div>
+    </div>
 </body>
 </html>

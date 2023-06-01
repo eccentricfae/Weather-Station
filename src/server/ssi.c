@@ -1,8 +1,15 @@
 #include "ssi.h"
 
 
-char const * ssi_tags[] = { /* index 0 */ "temp", 
-                            /* index 1 */ "humid" };
+char const * ssi_tags[] = { 
+                            /* index 0 */ "temp", 
+                            /* index 1 */ "humid",   // todo Delete later and refactor the rest
+                            /* index 2 */ "uptime",
+                            /* index 3 */ "wfnm",    // Wifi Name
+                            /* index 4 */ "sigstr",  // Signal Strength
+                            /* index 5 */ "batvolt", // Voltage across the battery
+                            /* index 6 */ "picotmp", // Temperature on the Pico
+                          };
 
 
 u16_t ssi_handlers(int index, char * insert, int insert_len)
@@ -15,7 +22,34 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
             break;
 
         case 1: // #humid
-            printed = (u16_t)snprintf(insert, insert_len, "%.1f", readHumiditySensor());
+            // Just for legacy purposes, maybe will be deleted later 
+            printed = 0;
+            break;
+
+        case 2: // #uptime
+            uptime_t val = getUptime();
+            printed = (u16_t)snprintf(insert, insert_len, "%dd-%dh-%2dm-%2ds", val.days, val.hours, val.minutes, val.seconds);
+            break;
+
+        case 3: // #wfnm
+            printed = (u16_t)snprintf(insert, insert_len, "%s", WIFI_SSID);
+            break;
+
+        case 4: // #sigstr
+            int32_t rssi = 0;
+            if (cyw43_wifi_get_rssi(&cyw43_state, &rssi) != 0) {
+                printed = (u16_t)snprintf(insert, insert_len, "%s", "error");
+            } else {
+                printed = (u16_t)snprintf(insert, insert_len, "%s", rssiToStr(rssi));
+            }
+            break;
+
+        case 5: // #batvolt
+            printed = (u16_t)snprintf(insert, insert_len, "%.2f", readBatteryVoltage());
+            break;
+
+        case 6: // #picotmp
+            printed = (u16_t)snprintf(insert, insert_len, "%.1f", getPicoTemp());
             break;
 
         default:

@@ -2,10 +2,11 @@
 
 # TODO / IDEAS
 - mDNS?
-- debug page?
+- debug page -> nicer frontend?
 - page w/ detailed info? like avg temp or highest / lowest? 
-- LEDs?
-- verifying that it is connected
+- Change humidity to pressure if the BMP280 will work
+- LEDs? on the circuit
+- verifying that it is connected (loss of connection callback etc)
 
 # TLDR
 This project is a simple internet-enabled Weather Station, built using Raspberry Pi Pico W microcontroller. The uC opens up an HTTP server, on port 80, to serve / display a simple web page with data from the sensors: temperature and humidity.

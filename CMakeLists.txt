@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-# TODO Check if current directory is the same where the CMakeLists.txt is
+message(AUTHOR_WARNING "WARNING: Make sure that you generate the CMake files when running from the root directory!")
 
 set(PICO_BOARD pico_w)
 
@@ -52,7 +52,9 @@ target_link_libraries(
     PUBLIC
     pico_stdlib 
     pico_cyw43_arch_lwip_threadsafe_background
-    pico_lwip_http                             
+    pico_lwip_http   
+    hardware_adc
+    -lm                          
 )
 
 # Enable USB output for trivial USB-PC debugging
