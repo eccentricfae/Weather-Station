@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-# TODO Check if current directory is the same where the CMakeLists.txt is
+message(AUTHOR_WARNING "WARNING: Make sure that you generate the CMake files when running from the root directory!")
 
 set(PICO_BOARD pico_w)
 

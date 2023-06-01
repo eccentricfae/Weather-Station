@@ -52,9 +52,17 @@
         <img style="padding-left: 20px;" src="https://cdn-icons-png.flaticon.com/512/578/578113.png" alt="Thermometer Icon">
         <p><!--#temp--></p>
     </div>
-    <div class="row cntr">
-        <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Humidity Icon">
-        <p style="padding-left: 20px;"><!--#humid--></p>
+    <!-- <div class="row cntr"> -->
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Humidity Icon"> -->
+        <!-- <p style="padding-left: 20px;">#humid</p> -->
+    <!-- </div> -->
+    <div class="cntr">
+        <div style="margin-top: 100px; backdrop-filter: blur(4px); height: 70px; width: 200px;" class="row cntr">
+            <a href="./index.shtml"><img style="height: 70px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Refresh_icon.svg/1024px-Refresh_icon.svg.png" alt="Refresh Icon"></a>
+            <a href="./detailed.shtml"><img style="height: 70px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1200px-Infobox_info_icon.svg.png" alt="Debug Page Icon"></a>
+            <a href="./debug.shtml"><img style="height: 70px;" src="https://cdn4.iconfinder.com/data/icons/interface-feedback-solid-style/24/interface-question-mark-512.png" alt="Detailed Info Page Icon"></a>
+        </div>
     </div>
+
 </body>
 </html>

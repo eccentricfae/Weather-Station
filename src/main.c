@@ -62,5 +62,7 @@ void main(void)
 
     while (true) {
         //
+        // TODO network connection OK?
+        // TODO regular intervals -> read temp and store it for the debug page (addRecToBuffer())
     }
 }

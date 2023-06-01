@@ -3,12 +3,12 @@
 
 char const * ssi_tags[] = { 
                             /* index 0 */ "temp", 
-                            /* index 1 */ "humid",
+                            /* index 1 */ "humid",   // todo Delete later and refactor the rest
                             /* index 2 */ "uptime",
                             /* index 3 */ "wfnm",    // Wifi Name
                             /* index 4 */ "sigstr",  // Signal Strength
                             /* index 5 */ "batvolt", // Voltage across the battery
-                            
+                            /* index 6 */ "picotmp", // Temperature on the Pico
                           };
 
 
@@ -22,7 +22,8 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
             break;
 
         case 1: // #humid
-            printed = (u16_t)snprintf(insert, insert_len, "%.1f", readHumiditySensor());
+            // Just for legacy purposes, maybe will be deleted later 
+            printed = 0;
             break;
 
         case 2: // #uptime
@@ -45,6 +46,10 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
 
         case 5: // #batvolt
             printed = (u16_t)snprintf(insert, insert_len, "%.2f", readBatteryVoltage());
+            break;
+
+        case 6: // #picotmp
+            printed = (u16_t)snprintf(insert, insert_len, "%.1f", getPicoTemp());
             break;
 
         default:
