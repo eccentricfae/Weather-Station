@@ -78,6 +78,9 @@ void addRecToBuffer()
     if (g_buff_it >= TEMP_REC_BUFF_LEN) {
         g_buff_it = 0;
     }
+    if (g_taken < (TEMP_REC_BUFF_LEN - 1)) {
+        g_taken++;
+    }
 }
 
 float getAvgTempFromRecs()

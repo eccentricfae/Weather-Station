@@ -69,3 +69,18 @@ char const * rssiToStr(int32_t rssi)
         return "Poor";
     }
 }
+
+uptime_t parseSecs(uint32_t secs)
+{
+    uptime_t retval;
+
+    retval.days = (uint8_t)floor(secs / 86400);
+    secs = secs - (retval.days * 86400);
+    retval.hours = (uint8_t)floor(secs / 3600);
+    secs = secs - (retval.hours * 3600);
+    retval.minutes = (uint8_t)floor(secs / 60);
+    secs = secs - (retval.minutes * 60);
+    retval.seconds = (uint8_t)(secs);
+
+    return retval;
+}

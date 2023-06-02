@@ -4,6 +4,7 @@
 #include <pico/error.h>
 #include <pico/time.h>
 #include <math.h>
+#include "hardware.h"
 
 typedef struct {
     uint8_t days;
@@ -32,5 +33,10 @@ uptime_t getUptime();
  * @brief Given RSSI value returns text description of the signal's strength
  */
 char const * rssiToStr(int32_t rssi);
+
+/**
+ * @brief TODO
+ */
+uptime_t parseSecs(uint32_t secs);
 
 #endif
