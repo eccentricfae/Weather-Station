@@ -84,4 +84,10 @@ float getMinTempFromRecs();
  */
 float getPicoTemp();
 
+/**
+ * @brief Returns the size (no. of elements) in the recordings
+ * buffer / array
+ */
+uint32_t getRecsSize();
+
 #endif

@@ -35,7 +35,9 @@ uptime_t getUptime();
 char const * rssiToStr(int32_t rssi);
 
 /**
- * @brief TODO
+ * @brief Parses seconds given as an uint to struct containing 
+ * approperiate values for days, hours, minutes and seconds, depending
+ * on the passed value of the "secs" argument
  */
 uptime_t parseSecs(uint32_t secs);
 

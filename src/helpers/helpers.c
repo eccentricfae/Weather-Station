@@ -46,9 +46,9 @@ uptime_t getUptime()
 
     uptime_t retval;
 
-    retval.days = (uint8_t)floor(uptime_ms / 86400000);
+    retval.days    = (uint8_t)floor(uptime_ms / 86400000);
     uptime_ms = uptime_ms - (retval.days * 86400000);
-    retval.hours = (uint8_t)floor(uptime_ms / 3600000);
+    retval.hours   = (uint8_t)floor(uptime_ms / 3600000);
     uptime_ms = uptime_ms - (retval.hours * 3600000);
     retval.minutes = (uint8_t)floor(uptime_ms / 60000);
     uptime_ms = uptime_ms - (retval.minutes * 60000);

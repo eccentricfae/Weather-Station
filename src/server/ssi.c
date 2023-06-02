@@ -2,18 +2,18 @@
 
 
 char const * ssi_tags[] = { 
-                            /* index 0 */ "temp", 
-                            /* index 1 */ "humid",    // todo Delete later and refactor the rest
-                            /* index 2 */ "uptime",
-                            /* index 3 */ "wfnm",     // Wifi Name
-                            /* index 4 */ "sigstr",   // Signal Strength
-                            /* index 5 */ "batvolt",  // Voltage across the battery
-                            /* index 6 */ "picotmp",  // Temperature on the Pico
-                            /* index 7 */ "recper",   // Recordings period
-                            /* index 8 */ "avgtmp",
-                            /* index 9 */ "maxtmp",   // Highest temperature from the recordings
-                            /* index 10 */ "mintmp",  // Lowest temperature from the recordings
-                            /* index 11 */ "picotmp", // Temperature on the Pico
+                            /* index 0 */  "temp", 
+                            /* index 1 */  "humid",    // todo Delete later and refactor the rest
+                            /* index 2 */  "uptime",
+                            /* index 3 */  "wfnm",     // Wifi Name
+                            /* index 4 */  "sigstr",   // Signal Strength
+                            /* index 5 */  "batvolt",  // Voltage across the battery
+                            /* index 6 */  "picotmp",  // Temperature on the Pico
+                            /* index 7 */  "recper",   // Recordings period
+                            /* index 8 */  "avgtmp",
+                            /* index 9 */  "maxtmp",   // Highest temperature from the recordings
+                            /* index 10 */ "mintmp",   // Lowest temperature from the recordings
+                            /* index 11 */ "picotmp",  // Temperature on the Pico
                           };
 
 
@@ -58,7 +58,7 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
             break;
 
         case 7: // #recper
-            uptime_t sval = parseSecs(TEMP_READ_INTERVAL_S * TEMP_REC_BUFF_LEN);
+            uptime_t sval = parseSecs(TEMP_READ_INTERVAL_S * getRecsSize());
             printed = (u16_t)snprintf(insert, insert_len, "%dd-%dh-%2dm-%2ds", sval.days, sval.hours, sval.minutes, sval.seconds);
             break;
 

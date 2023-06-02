@@ -16,9 +16,18 @@ const char * debug_handler(int index,
     return "/debug.shtml";
 }
 
+const char * details_handler(int index, 
+                             int num_params, 
+                             char * params[], 
+                             char * values[])
+{
+    return "/details.shtml";
+}
+
 tCGI const cgi_handlers[] = {
-    { "/home",  home_handler }, // index 0;  <ip-addr>/home; also works <ip-addr> (nothing)
-    { "/debug", debug_handler } // index 1; <ip-addr>/debug
+    { "/home",    home_handler },    // index 0;  <ip-addr>/home; also works <ip-addr> (nothing)
+    { "/debug",   debug_handler },   // index 1; <ip-addr>/debug
+    { "/details", details_handler }  // index 2; <ip-addr>/details
 };
 
 
