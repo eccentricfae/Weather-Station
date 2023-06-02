@@ -58,8 +58,8 @@ u16_t ssi_handlers(int index, char * insert, int insert_len)
             break;
 
         case 7: // #recper
-            uptime_t val = parseSecs(TEMP_READ_INTERVAL_S * TEMP_REC_BUFF_LEN);
-            printed = (u16_t)snprintf(insert, insert_len, "%dd-%dh-%2dm-%2ds", val.days, val.hours, val.minutes, val.seconds);
+            uptime_t sval = parseSecs(TEMP_READ_INTERVAL_S * TEMP_REC_BUFF_LEN);
+            printed = (u16_t)snprintf(insert, insert_len, "%dd-%dh-%2dm-%2ds", sval.days, sval.hours, sval.minutes, sval.seconds);
             break;
 
         case 8: // #avgtmp
