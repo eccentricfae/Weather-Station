@@ -1,3 +1,54 @@
-TODO
-Avg temperature?
-Highest / lowest temp?
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Weather Station</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @media (min-width: 200px) {
+            body {
+                background-image: url('https://i.pinimg.com/originals/cd/00/64/cd0064949154b578a22d98142547b31e.jpg');
+                background-size: 100vw 100vh;
+                backdrop-filter: blur(7px);
+                height: 100vh;
+            }
+        }
+        @media (min-width: 1000px) {
+            body {
+                background-image: url('https://i.pinimg.com/originals/cd/00/64/cd0064949154b578a22d98142547b31e.jpg');
+                background-size: 100vw 100vh;
+                backdrop-filter: blur(7px);
+                height: 100vh;
+            }
+        }
+        .cntr {
+            display: flex;
+            justify-content: center;
+        }
+        body > p, ul > li {
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main_title" class="cntr">Page w/ details about the recorded temperatures</h1>
+    <p>The Weather Station keeps track of temperatures from the last:</p>
+    <p><!--#recper--></p>
+    <p>In that time:</p>
+    <ul>
+        <li>The average temperatute was: <!--#avgtmp--></li>
+        <li>The highest temperature was: <!--#maxtmp--></li>
+        <li>The lowest temperature was: <!--#mintmp--></li>
+    </ul>
+    <p>Current temperature on the sensor is: <!--#temp--></p>
+    <p>Current temperature on the on-board thermometer on the microcontroller is: <!--#picotmp--></p>
+    <div class="cntr">
+        <div style="margin-top: 100px; backdrop-filter: blur(4px); height: 70px; width: 200px;" class="row cntr">
+            <a href="./index.shtml"><img style="height: 70px;" src="https://cdn.pixabay.com/photo/2014/04/03/00/38/house-308936_1280.png" alt="Refresh Icon"></a>
+            <a href="./detailed.shtml"><img style="height: 70px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Refresh_icon.svg/1024px-Refresh_icon.svg.png" alt="Debug Page Icon"></a>
+            <a href="./debug.shtml"><img style="height: 70px;" src="https://cdn4.iconfinder.com/data/icons/interface-feedback-solid-style/24/interface-question-mark-512.png" alt="Detailed Info Page Icon"></a>
+        </div>
+    </div>
+
+</body>
+</html>
