@@ -4,19 +4,34 @@
 This project is a simple internet-enabled Weather Station, built using Raspberry Pi Pico W microcontroller. The uC opens up an HTTP server, on port 80, to serve / display a simple web page with data from the temperature sensor.
 
 # Showcase
-
+(Pictures available in /doc directory)
 ## Main page / "Home"
-TODO Pictures and description
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/main_mobile.png" height="400">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/main_pc.png" height="400">
+The main page displays the current temperature of the sensor as well as the "navigation panel", e.g. the refresh button to refresh the page, button to go to the "details" page, and a button to go to the "debug" page
 
 ## Details page
-TODO Pictures and description
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/details_1_mobile.png" height="400">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/details_2_mobile.png" height="400">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/details_pc.png" height="400">
+The "details" page displays:
+- informs for how long the "weather station" has been keeping track of the temperature
+- min / max / avg temperature in the aforementioned time window
+- current temperature on the sensor / uC's on-board temperature sensor
 
 ## Debug / Meta info page
-TODO Pictures and description
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/debug_1_mobile.png" height="400">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/debug_2_mobile.png" height="400">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/debug_pc.png" height="400">
+The "debug" page displays some basic info regarding the device, such as:
+- uptime (time since boot)
+- voltage across the battery, to monitor the state / charge of the battery
+- wifi name and signal strength
+- current temperature both on the sensor as well as on the Pico's on-board sensor
 
 ## The "device"
-<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/device_outer.jpg" height="500" width="500" style="transform: rotate(270deg);">
-<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/device_internals.jpg" height="500" width="500">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/device_outer.jpg" height="400" width="400" style="transform: rotate(270deg);">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/device_internals.jpg" height="400" width="400">
 
 # Detailed description
 
