@@ -27,7 +27,7 @@ code, but it's important to remember that everything regarding any given webpage
 CSS styles) needs to be embedded into that webpage (html file). That is because the html 
 files need to be "transpiled" from human-readable text into C's strings, i.e. char arrays,
 put into a special .c source file and included into a project so that the web page's
-raw data can be put onto the uC storage. The "makefsdata.py" is the python script 
+raw data can be put onto the uC storage. The "makefsdata.py" (in src/helpers/) is the python script 
 that transpiles the .html files from the html directory into the html_data.c file (the 
 file is supposed to be ignored by .gitignore but was included for demonstration 
 purposes).<br>
