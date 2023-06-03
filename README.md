@@ -32,15 +32,14 @@ that transpiles the .html files from the html directory into the html_data.c fil
 file is supposed to be ignored by .gitignore but was included for demonstration 
 purposes).<br>
 The HTTPd daemon uses CGI (Common Gate Interface) to process user's requests. In this 
-project the CGI is used to display either the default-home page when accessing the 
+project the CGI is used to display 3 pages, like: the default-home page when accessing the 
 server with either no tag (just pure address of the uC) or with the "/home" tag. The 
 second tag used by the set up CGI is "/debug" tag, that tells the server to return a 
-simple web page with debug informations about the device.<br>
-There is also a "/details" page w/ summary of the info (temperature readings) that were
-taken by the uC.<br>
-The HTTPd daemon uses basic SSI (Server-Side Includes) to fill out the HTML pages with 
-desired info. In this project the SSI is used to fill out the temperature and humidity 
-data from the sensors, as well as the data in the debug page.<br>
+simple web page with debug informations about the device. There is also a "/details" 
+page w/ summary of the info (temperature readings) that were taken by the uC.<br>
+The HTTPd daemon uses basic SSIs (Server-Side Includes) to fill out the HTML pages with 
+desired info. In this project the SSIs are used to fill out informations that can only be 
+obtained at run-time, e.g. temperature readings.<br>
 
 
 ### Hardware-side software
@@ -49,7 +48,7 @@ functionalities: <br>
 - reading the temperature from sensor: Reading the temperature is as simple as reading 
 an analog voltage value using on-board A/D converter on specific GPIO pin.
 - reading the temperature from the on-board thermometer: same as above, but instead of 
-using a GPIO pin, an internal connections are used.
+using a GPIO pin, internal connections are used.
 - reading the battery voltage level: Also uses A/D converter :)
 - singalling LOC (Loss of Connection): When the uC observes that it lost connection
 to the Wifi network, it will light up an LED. Simple gpio_put(value) is used for driving
