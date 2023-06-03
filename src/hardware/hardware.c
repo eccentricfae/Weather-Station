@@ -59,11 +59,11 @@ void clearLoc()
 float readTempSensor()
 {
     // Take the current battery's voltage as Vref for more accurate reading
-    float const vref = readBatteryVoltage();
+    float const vref = 3.3f;
 
     adc_select_input(1);
     uint16_t adc_raw = adc_read();
-    float voltage = adc_raw * (vref / ((1 << 12) - 1));
+    float voltage = (float)adc_raw * (vref / (float)(1 << 12));
 
     float temp = (voltage - 0.5f) * 100;
 
@@ -81,7 +81,7 @@ float readBatteryVoltage()
 
     adc_select_input(0);
     uint16_t adc_raw = adc_read();
-    float converted = adc_raw * (vref_value / ((1 << 12) - 1));
+    float converted = (float)adc_raw * (vref_value / (float)(1 << 12));
     
     return converted;
 }
