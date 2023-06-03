@@ -14,6 +14,10 @@ TODO Pictures and description
 ## Debug / Meta info page
 TODO Pictures and description
 
+## The "device"
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/device_outer.jpg" height="500" width="500" style="transform: rotate(270deg);">
+<img src="https://github.com/faeisanxious/Weather-Station/blob/main/doc/device_internals.jpg" height="500" width="500">
+
 # Detailed description
 
 ## Software
@@ -57,7 +61,7 @@ the pin into high / low logical level
 ## Hardware
 
 ### The circuit
-TODO Circuit picture
+![Schematic / image of the circuit](/doc/circuit.png)
 The circuit is a rather simple one. Between the battery and the rest of the circuit is a 
 switch that controls the power delivery (ON/ OFF).<br>
 The temperature sensor outputs an analog voltage value on its Vout pin that corresponds 
@@ -75,10 +79,11 @@ readings regarding battery's voltage output would always equal 3.2 V (nominal va
  my batteries)
 - AGND - A/D converter's GND pin 
 - ADC1 / ADC0 - A/D converter's channel 1 and 0 inputs
-The circuit draws an average of <// TODO avg current draw> while working. Considering an average AA battery w/
-<// TODO AA bat's cap> capacity, the device can work up to <// TODO Total cap / avg current draw>.<br>
 The batteries for this device are: two parallel-connected two-slot battery baskets. Therefore 
-the device should have total capacity of around 2*<// TODO avg cap> = <// TODO Result> @ 3.2 V.
+the device should have total capacity of around 2*2000mAh = 4000mAh @ 3.2 V.
+The circuit draws an average of 84 mA while working. Considering an average AA battery w/
+2000 mAh capacity, the device can work up to 47.6 hours.<br>
+
 
 ### Raspberry Pi Pico W
 As the "brain" of the project a Raspberry Pi Pico W was chosen. It is a rather inexpensive 
