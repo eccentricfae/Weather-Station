@@ -1,7 +1,8 @@
 # IoT Weather Station
 
 # TLDR
-This project is a simple internet-enabled Weather Station, built using Raspberry Pi Pico W microcontroller. The uC opens up an HTTP server, on port 80, to serve / display a simple web page with data from the temperature sensor.
+This is a prototype / proof of concept for this project: https://github.com/faeisanxious/Weather-Station-IoT
+<br>This project is a simple internet-enabled Weather Station, built using Raspberry Pi Pico W microcontroller. The uC opens up an HTTP server, on port 80, to serve / display a simple web page with data from the temperature sensor.
 
 # Showcase
 (Pictures available in /doc directory)
